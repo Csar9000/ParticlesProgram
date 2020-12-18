@@ -34,6 +34,7 @@ namespace CourseworkOfTheThirdSemester
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             Console.WriteLine("Hello world");
+            Console.WriteLine("Hello world");
         }
 
         private void pictureBox1_Tick(object sender, EventArgs e)
