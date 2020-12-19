@@ -1,0 +1,10 @@
+C:\Users\Csar\source\repos\CourseworkOfTheThirdSemester\CourseworkOfTheThirdSemester\bin\Debug\CourseworkOfTheThirdSemester.exe.config
+C:\Users\Csar\source\repos\CourseworkOfTheThirdSemester\CourseworkOfTheThirdSemester\bin\Debug\CourseworkOfTheThirdSemester.exe
+C:\Users\Csar\source\repos\CourseworkOfTheThirdSemester\CourseworkOfTheThirdSemester\bin\Debug\CourseworkOfTheThirdSemester.pdb
+C:\Users\Csar\source\repos\CourseworkOfTheThirdSemester\CourseworkOfTheThirdSemester\obj\Debug\CourseworkOfTheThirdSemester.csprojAssemblyReference.cache
+C:\Users\Csar\source\repos\CourseworkOfTheThirdSemester\CourseworkOfTheThirdSemester\obj\Debug\CourseworkOfTheThirdSemester.Form1.resources
+C:\Users\Csar\source\repos\CourseworkOfTheThirdSemester\CourseworkOfTheThirdSemester\obj\Debug\CourseworkOfTheThirdSemester.Properties.Resources.resources
+C:\Users\Csar\source\repos\CourseworkOfTheThirdSemester\CourseworkOfTheThirdSemester\obj\Debug\CourseworkOfTheThirdSemester.csproj.GenerateResource.cache
+C:\Users\Csar\source\repos\CourseworkOfTheThirdSemester\CourseworkOfTheThirdSemester\obj\Debug\CourseworkOfTheThirdSemester.csproj.CoreCompileInputs.cache
+C:\Users\Csar\source\repos\CourseworkOfTheThirdSemester\CourseworkOfTheThirdSemester\obj\Debug\CourseworkOfTheThirdSemester.exe
+C:\Users\Csar\source\repos\CourseworkOfTheThirdSemester\CourseworkOfTheThirdSemester\obj\Debug\CourseworkOfTheThirdSemester.pdb

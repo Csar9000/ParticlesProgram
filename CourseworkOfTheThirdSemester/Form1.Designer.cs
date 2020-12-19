@@ -42,12 +42,13 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.pictureBox1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseMove);
             // 
             // timer1
             // 
             this.timer1.Enabled = true;
             this.timer1.Interval = 40;
-            this.timer1.Tick += new System.EventHandler(this.pictureBox1_Tick);
+            this.timer1.Tick += new System.EventHandler(this.Timer_Tick);
             // 
             // Form1
             // 
