@@ -14,18 +14,17 @@ namespace CourseworkOfTheThirdSemester
     public partial class Form1 : Form
     {
         List<Emitter> emitters = new List<Emitter>();
-        Emitter emitter; // добавим поле для эмиттера
+        Emitter emitter;
 
-        bool radar = false;
+        bool radarActive = false;
 
         private int MousePositionX = 0;
         private int MousePositionY = 0;
 
-        
 
-        ParticleRadar radarParticle = null; //объект радара
+        ParticleRadar radarParticle = null; 
 
-        GravityPoint point1; // добавил поле под первую точку
+        GravityPoint point1; 
 
         public Form1()
         {
@@ -33,7 +32,7 @@ namespace CourseworkOfTheThirdSemester
 
             pictureBox1.Image = new Bitmap(pictureBox1.Width, pictureBox1.Height);
 
-            this.emitter = new Emitter // создаю эмиттер и привязываю его к полю emitter
+            this.emitter = new Emitter 
             {
                 Direction = 0,
                 Spreading = 10,
@@ -185,8 +184,8 @@ namespace CourseworkOfTheThirdSemester
 
         private void btnActivateRadar_Click(object sender, EventArgs e)
         {
-            radar = !radar;
-            if (radar)
+            radarActive = !radarActive;
+            if (radarActive)
             {
                 foreach (var emit in emitters)
                     emit.impactPoints.Add(radarParticle); //при активации радара, он добавляется
@@ -211,7 +210,7 @@ namespace CourseworkOfTheThirdSemester
         }
         private void pictureBox1_MouseWheel(object sender, MouseEventArgs e)
         {
-            if (radar)
+            if (radarActive)
             {
                 int number = e.Delta * SystemInformation.MouseWheelScrollLines / 30;
                 if ((radarParticle.Power + number) >= 0)
