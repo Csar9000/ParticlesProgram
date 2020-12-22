@@ -8,3 +8,23 @@ C:\Users\Csar\source\repos\CourseworkOfTheThirdSemester\CourseworkOfTheThirdSeme
 C:\Users\Csar\source\repos\CourseworkOfTheThirdSemester\CourseworkOfTheThirdSemester\obj\Debug\CourseworkOfTheThirdSemester.csproj.CoreCompileInputs.cache
 C:\Users\Csar\source\repos\CourseworkOfTheThirdSemester\CourseworkOfTheThirdSemester\obj\Debug\CourseworkOfTheThirdSemester.exe
 C:\Users\Csar\source\repos\CourseworkOfTheThirdSemester\CourseworkOfTheThirdSemester\obj\Debug\CourseworkOfTheThirdSemester.pdb
+C:\Users\Admin\Desktop\CourseworkOfTheThirdSemester\CourseworkOfTheThirdSemester\bin\Debug\CourseworkOfTheThirdSemester.exe.config
+C:\Users\Admin\Desktop\CourseworkOfTheThirdSemester\CourseworkOfTheThirdSemester\bin\Debug\CourseworkOfTheThirdSemester.exe
+C:\Users\Admin\Desktop\CourseworkOfTheThirdSemester\CourseworkOfTheThirdSemester\bin\Debug\CourseworkOfTheThirdSemester.pdb
+C:\Users\Admin\Desktop\CourseworkOfTheThirdSemester\CourseworkOfTheThirdSemester\obj\Debug\CourseworkOfTheThirdSemester.csprojAssemblyReference.cache
+C:\Users\Admin\Desktop\CourseworkOfTheThirdSemester\CourseworkOfTheThirdSemester\obj\Debug\CourseworkOfTheThirdSemester.Form1.resources
+C:\Users\Admin\Desktop\CourseworkOfTheThirdSemester\CourseworkOfTheThirdSemester\obj\Debug\CourseworkOfTheThirdSemester.Properties.Resources.resources
+C:\Users\Admin\Desktop\CourseworkOfTheThirdSemester\CourseworkOfTheThirdSemester\obj\Debug\CourseworkOfTheThirdSemester.csproj.GenerateResource.cache
+C:\Users\Admin\Desktop\CourseworkOfTheThirdSemester\CourseworkOfTheThirdSemester\obj\Debug\CourseworkOfTheThirdSemester.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Desktop\CourseworkOfTheThirdSemester\CourseworkOfTheThirdSemester\obj\Debug\CourseworkOfTheThirdSemester.exe
+C:\Users\Admin\Desktop\CourseworkOfTheThirdSemester\CourseworkOfTheThirdSemester\obj\Debug\CourseworkOfTheThirdSemester.pdb
+C:\Users\Csar\Desktop\Новая папка\CourseworkOfTheThirdSemester\CourseworkOfTheThirdSemester\bin\Debug\CourseworkOfTheThirdSemester.exe.config
+C:\Users\Csar\Desktop\Новая папка\CourseworkOfTheThirdSemester\CourseworkOfTheThirdSemester\bin\Debug\CourseworkOfTheThirdSemester.exe
+C:\Users\Csar\Desktop\Новая папка\CourseworkOfTheThirdSemester\CourseworkOfTheThirdSemester\bin\Debug\CourseworkOfTheThirdSemester.pdb
+C:\Users\Csar\Desktop\Новая папка\CourseworkOfTheThirdSemester\CourseworkOfTheThirdSemester\obj\Debug\CourseworkOfTheThirdSemester.csprojAssemblyReference.cache
+C:\Users\Csar\Desktop\Новая папка\CourseworkOfTheThirdSemester\CourseworkOfTheThirdSemester\obj\Debug\CourseworkOfTheThirdSemester.Form1.resources
+C:\Users\Csar\Desktop\Новая папка\CourseworkOfTheThirdSemester\CourseworkOfTheThirdSemester\obj\Debug\CourseworkOfTheThirdSemester.Properties.Resources.resources
+C:\Users\Csar\Desktop\Новая папка\CourseworkOfTheThirdSemester\CourseworkOfTheThirdSemester\obj\Debug\CourseworkOfTheThirdSemester.csproj.GenerateResource.cache
+C:\Users\Csar\Desktop\Новая папка\CourseworkOfTheThirdSemester\CourseworkOfTheThirdSemester\obj\Debug\CourseworkOfTheThirdSemester.csproj.CoreCompileInputs.cache
+C:\Users\Csar\Desktop\Новая папка\CourseworkOfTheThirdSemester\CourseworkOfTheThirdSemester\obj\Debug\CourseworkOfTheThirdSemester.exe
+C:\Users\Csar\Desktop\Новая папка\CourseworkOfTheThirdSemester\CourseworkOfTheThirdSemester\obj\Debug\CourseworkOfTheThirdSemester.pdb

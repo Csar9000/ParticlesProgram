@@ -4,11 +4,17 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace CourseworkOfTheThirdSemester
 {
     public class Particle
     {
+        public bool ActiveRadar = false; //находится ли частица под действием радара
+
+        // два новых поля под цвет начальный и конечный
+        public Color FromColor;
+        public Color ToColor;
 
         public int Radius; // радуис частицы
         public float X; // X координата положения частицы в пространстве
@@ -42,7 +48,6 @@ namespace CourseworkOfTheThirdSemester
             // рассчитываем значение альфа канала в шкале от 0 до 255
             // по аналогии с RGB, он используется для задания прозрачности
             int alpha = (int)(k * 255);
-
             // создаем цвет из уже существующего, но привязываем к нему еще и значение альфа канала
             var color = Color.FromArgb(alpha, Color.Black);
             var b = new SolidBrush(color);
@@ -52,22 +57,37 @@ namespace CourseworkOfTheThirdSemester
 
             b.Dispose();
         }
+        public virtual void DrawRadar(Graphics g) //функция рисования используемая радаром
+        {
+            Draw(g);
+        }
 
         public class ParticleColorful : Particle
         {
-            // два новых поля под цвет начальный и конечный
-            public Color FromColor;
-            public Color ToColor;
+            public override void DrawRadar(Graphics g)
+            {
+                float k = Math.Min(1f, Life / 100);
+                var color = MixColor(ToColor, FromColor, k);
+                var b = new SolidBrush(color);
+                g.FillEllipse(b, X - Radius, Y - Radius, Radius * 2, Radius * 2);
+            }
 
-            // для смеси цветов
             public static Color MixColor(Color color1, Color color2, float k)
             {
-                return Color.FromArgb(
-                    (int)(color2.A * k + color1.A * (1 - k)),
-                    (int)(color2.R * k + color1.R * (1 - k)),
-                    (int)(color2.G * k + color1.G * (1 - k)),
-                    (int)(color2.B * k + color1.B * (1 - k))
-                );
+
+                int alpha = (int)(color2.A * k + color1.A * (1 - k)),
+            red = (int)(color2.R * k + color1.R * (1 - k)),
+            green = (int)(color2.G * k + color1.G * (1 - k)),
+            blue = (int)(color2.B * k + color1.B * (1 - k));
+
+
+                alpha = (alpha < 0) ? 0 : (alpha > 255) ? 255 : alpha;
+                red = (red < 0) ? 0 : (red > 255) ? 255 : red;
+                green = (green < 0) ? 0 : (green > 255) ? 255 : green;
+                blue = (blue < 0) ? 0 : (blue > 255) ? 255 : blue;
+
+                return Color.FromArgb(alpha, red, green, blue);
+
             }
 
             // ну и отрисовку перепишем
@@ -82,6 +102,18 @@ namespace CourseworkOfTheThirdSemester
                 g.FillEllipse(b, X - Radius, Y - Radius, Radius * 2, Radius * 2);
 
                 b.Dispose();
+            }
+
+        }
+
+        public class ParticleInformation : ParticleColorful
+        {
+            public override void DrawRadar(Graphics g)
+            {
+                float k = Math.Min(1f, Life / 100);
+                var color = MixColor(ToColor, FromColor, k);
+                var b = new SolidBrush(color);
+                g.FillEllipse(b, X - Radius, Y - Radius, Radius * 2, Radius * 2);
             }
         }
 
