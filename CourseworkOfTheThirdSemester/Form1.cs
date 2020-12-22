@@ -18,6 +18,11 @@ namespace CourseworkOfTheThirdSemester
 
         bool radar = false;
 
+        private int MousePositionX = 0;
+        private int MousePositionY = 0;
+
+        pictureBox1.MouseWheel += pictureBox1_MouseWheel;
+
         ParticleRadar radarParticle = null; //объект радара
 
         GravityPoint point1; // добавил поле под первую точку
@@ -93,25 +98,43 @@ namespace CourseworkOfTheThirdSemester
         int counter = 0;
         private void Timer_Tick(object sender, EventArgs e)
         {
-           emitter.UpdateState();
+            int counter = 0; //количество частиц из всех эммитеров, которые попали в область действия радара
+            emitter.UpdateState();
+
 
             using (var g = Graphics.FromImage(pictureBox1.Image))
             {
-                g.Clear(Color.Black); // А ЕЩЕ ЧЕРНЫЙ ФОН СДЕЛАЮ
-                emitter.Render(g);
+                g.Clear(Color.Black);
+                foreach (var emit in emitters)
+                {
+
+                    emit.Render(g);
+                    counter += emit.CounterActiveRadar(); //подсчёт частиц, которые попали в область действия радара
+                }
+                if (counter > 0)
+                {   //рисование чисел в области радара (количество частиц попавших в его область действия)
+                    g.DrawString($"{counter}",
+                    new Font("Verdana", 12),
+                    new SolidBrush(Color.White),
+                    MousePositionX-10,
+                    MousePositionY-15);
+                }
             }
 
+            
             pictureBox1.Invalidate();
         }
 
 
-        private int MousePositionX = 0;
-        private int MousePositionY = 0;
+       
 
         private void pictureBox1_MouseMove(object sender, MouseEventArgs e)
         {
             emitter.MousePositionX = e.X;
             emitter.MousePositionY = e.Y;
+
+            MousePositionX = e.X;
+            MousePositionY = e.Y;
 
             foreach (var emitter in emitters)
             {
@@ -181,6 +204,15 @@ namespace CourseworkOfTheThirdSemester
                         emit.impactPoints.RemoveAt(index);
                     emit.AllNoActiveParticle();
                 }
+            }
+        }
+        private void pictureBox1_MouseWheel(object sender, MouseEventArgs e)
+        {
+            if (radar)
+            {
+                int number = e.Delta * SystemInformation.MouseWheelScrollLines / 30;
+                if ((radarParticle.Power + number) >= 0)
+                    radarParticle.Power += number;
             }
         }
     }

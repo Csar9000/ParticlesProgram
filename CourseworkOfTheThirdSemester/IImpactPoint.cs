@@ -121,6 +121,7 @@ namespace CourseworkOfTheThirdSemester
             float gX = X - particle.X;
             float gY = Y - particle.Y;
 
+
             double r = Math.Sqrt(gX * gX + gY * gY);
             if(r + particle.Radius < Power / 2)
             {
@@ -141,6 +142,8 @@ namespace CourseworkOfTheThirdSemester
                    Power,
                    Power
                );
+           
+
         }
 
     }

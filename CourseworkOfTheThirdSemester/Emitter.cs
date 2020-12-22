@@ -143,34 +143,34 @@ namespace CourseworkOfTheThirdSemester
 
             particle.Radius = Particle.rand.Next(RadiusMin, RadiusMax);
         }
-
-
-        /// <summary>
-        /// Подсчёт количества частиц принадлежащих области действия радара
-        /// </summary>
-        /// <returns>Количество частиц принадлежащих области действия радара</returns>
-        public int CounterActiveRadar()
-        {
-            int counter = 0; //возврат числа частиц, которые попали в область действия радара
-            foreach (var particle in particles)
+        
+            /// <summary>
+            /// Подсчёт количества частиц принадлежащих области действия радара
+            /// </summary>
+            /// <returns>Количество частиц принадлежащих области действия радара</returns>
+            public int CounterActiveRadar()
             {
-                if (particle.ActiveRadar)
-                    counter++;
+                int counter = 0; //возврат числа частиц, которые попали в область действия радара
+                foreach (var particle in particles)
+                {
+                    if (particle.ActiveRadar)
+                        counter++;
+                }
+
+                return counter;
             }
 
-            return counter;
-        }
-
-        /// <summary>
-        /// Отменяет принадлежность к области радара всем частицам
-        /// </summary>
-        public void AllNoActiveParticle()
-        {
-            foreach (var particle in particles)
+            /// <summary>
+            /// Отменяет принадлежность к области радара всем частицам
+            /// </summary>
+            public void AllNoActiveParticle()
             {
-                particle.ActiveRadar = false;
+                foreach (var particle in particles)
+                {
+                    particle.ActiveRadar = false;
+                }
             }
-        }
+        
 
 
     }
