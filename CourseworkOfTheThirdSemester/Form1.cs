@@ -21,7 +21,7 @@ namespace CourseworkOfTheThirdSemester
         private int MousePositionX = 0;
         private int MousePositionY = 0;
 
-        pictureBox1.MouseWheel += pictureBox1_MouseWheel;
+        
 
         ParticleRadar radarParticle = null; //объект радара
 

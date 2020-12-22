@@ -2,6 +2,7 @@
 {
     partial class Form1
     {
+
         /// <summary>
         /// Обязательная переменная конструктора.
         /// </summary>
@@ -127,6 +128,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1084, 512);
             this.Controls.Add(this.btnActivateRadar);
+            pictureBox1.MouseWheel += pictureBox1_MouseWheel;
             this.Controls.Add(this.lblGravitation);
             this.Controls.Add(this.tbGravitation);
             this.Controls.Add(this.lblSpreading);
