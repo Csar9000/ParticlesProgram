@@ -148,13 +148,28 @@ namespace CourseworkOfTheThirdSemester
             /// Подсчёт количества частиц принадлежащих области действия радара
             /// </summary>
             /// <returns>Количество частиц принадлежащих области действия радара</returns>
-            public int CounterActiveRadar()
+            public int[] CounterActiveRadar()
             {
-                int counter = 0; //возврат числа частиц, которые попали в область действия радара
+                int[] counter =new int[4]; //возврат числа частиц, которые попали в область действия радара
                 foreach (var particle in particles)
                 {
-                    if (particle.ActiveRadar)
-                        counter++;
+                if (particle.ActiveRadar)
+                {
+                    counter[0]+=1;
+                    if (particle.Radius >= 2 && particle.Radius<5 )
+                    {
+                        counter[1] += 1;
+                    }
+                    if (particle.Radius >= 5 && particle.Radius < 8)
+                    {
+                        counter[2] += 1;
+                    }
+                    if (particle.Radius >= 8)
+                    {
+                        counter[3] += 1;
+                    }
+
+                }
                 }
 
                 return counter;
@@ -163,7 +178,7 @@ namespace CourseworkOfTheThirdSemester
             /// <summary>
             /// Отменяет принадлежность к области радара всем частицам
             /// </summary>
-            public void AllNoActiveParticle()
+            public void NoActiveParticle()
             {
                 foreach (var particle in particles)
                 {

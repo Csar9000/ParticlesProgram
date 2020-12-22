@@ -98,26 +98,29 @@ namespace CourseworkOfTheThirdSemester
         int counter = 0;
         private void Timer_Tick(object sender, EventArgs e)
         {
-            int counter = 0; //количество частиц из всех эммитеров, которые попали в область действия радара
+            int[] counter = new int[4]; //количество частиц из всех эммитеров, которые попали в область действия радара
             emitter.UpdateState();
-
 
             using (var g = Graphics.FromImage(pictureBox1.Image))
             {
                 g.Clear(Color.Black);
                 foreach (var emit in emitters)
                 {
-
                     emit.Render(g);
-                    counter += emit.CounterActiveRadar(); //подсчёт частиц, которые попали в область действия радара
+                    counter = emit.CounterActiveRadar(); //подсчёт частиц, которые попали в область действия радара                 
                 }
-                if (counter > 0)
+
+                var stringFormat = new StringFormat();
+                stringFormat.Alignment = StringAlignment.Center;
+                stringFormat.LineAlignment = StringAlignment.Center;
+                if (counter[0]+counter[1] + counter[2] + counter[3]!=0)
                 {   //рисование чисел в области радара (количество частиц попавших в его область действия)
-                    g.DrawString($"{counter}",
-                    new Font("Verdana", 12),
+                    g.DrawString($"{counter[0]}\n Большие {counter[3]}\n Средние {counter[2]}\n Маленькие {counter[1]} ",
+                    new Font("Verdana", 10),
                     new SolidBrush(Color.White),
-                    MousePositionX-10,
-                    MousePositionY-15);
+                    MousePositionX,
+                    MousePositionY,
+                    stringFormat);
                 }
             }
 
@@ -202,7 +205,7 @@ namespace CourseworkOfTheThirdSemester
 
                     if (index >= 0)
                         emit.impactPoints.RemoveAt(index);
-                    emit.AllNoActiveParticle();
+                    emit.NoActiveParticle();
                 }
             }
         }
