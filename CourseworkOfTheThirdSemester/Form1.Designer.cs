@@ -36,23 +36,24 @@
             this.lblDirection = new System.Windows.Forms.Label();
             this.trackBar1 = new System.Windows.Forms.TrackBar();
             this.lblSpreading = new System.Windows.Forms.Label();
-            this.tbGravitation = new System.Windows.Forms.TrackBar();
             this.lblGravitation = new System.Windows.Forms.Label();
             this.btnActivateRadar = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.lblRadarStatus = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbDirection)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tbGravitation)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
             // 
             this.pictureBox1.Location = new System.Drawing.Point(0, 1);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(803, 450);
+            this.pictureBox1.Size = new System.Drawing.Size(610, 457);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.pictureBox1.MouseWheel += pictureBox1_MouseWheel;
             this.pictureBox1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseMove);
             // 
             // timer1
@@ -63,8 +64,8 @@
             // 
             // tbDirection
             // 
-            this.tbDirection.Location = new System.Drawing.Point(0, 457);
-            this.tbDirection.Maximum = 357;
+            this.tbDirection.Location = new System.Drawing.Point(0, 481);
+            this.tbDirection.Maximum = 360;
             this.tbDirection.Name = "tbDirection";
             this.tbDirection.Size = new System.Drawing.Size(143, 56);
             this.tbDirection.TabIndex = 1;
@@ -80,8 +81,8 @@
             // 
             // trackBar1
             // 
-            this.trackBar1.Location = new System.Drawing.Point(275, 457);
-            this.trackBar1.Maximum = 720;
+            this.trackBar1.Location = new System.Drawing.Point(178, 481);
+            this.trackBar1.Maximum = 360;
             this.trackBar1.Name = "trackBar1";
             this.trackBar1.Size = new System.Drawing.Size(143, 56);
             this.trackBar1.TabIndex = 3;
@@ -95,15 +96,6 @@
             this.lblSpreading.Size = new System.Drawing.Size(0, 17);
             this.lblSpreading.TabIndex = 4;
             // 
-            // tbGravitation
-            // 
-            this.tbGravitation.Location = new System.Drawing.Point(526, 457);
-            this.tbGravitation.Maximum = 720;
-            this.tbGravitation.Name = "tbGravitation";
-            this.tbGravitation.Size = new System.Drawing.Size(143, 56);
-            this.tbGravitation.TabIndex = 5;
-           //this.tbGravitation.Scroll += new System.EventHandler(this.tbGravitation_Scroll);
-            // 
             // lblGravitation
             // 
             this.lblGravitation.AutoSize = true;
@@ -114,23 +106,51 @@
             // 
             // btnActivateRadar
             // 
-            this.btnActivateRadar.Location = new System.Drawing.Point(873, 457);
+            this.btnActivateRadar.Location = new System.Drawing.Point(359, 488);
             this.btnActivateRadar.Name = "btnActivateRadar";
-            this.btnActivateRadar.Size = new System.Drawing.Size(75, 23);
+            this.btnActivateRadar.Size = new System.Drawing.Size(121, 49);
             this.btnActivateRadar.TabIndex = 7;
-            this.btnActivateRadar.Text = "button1";
+            this.btnActivateRadar.Text = "Радар";
             this.btnActivateRadar.UseVisualStyleBackColor = true;
             this.btnActivateRadar.Click += new System.EventHandler(this.btnActivateRadar_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(12, 461);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(97, 17);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "Направление";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(187, 461);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(63, 17);
+            this.label2.TabIndex = 9;
+            this.label2.Text = "Разброс";
+            // 
+            // lblRadarStatus
+            // 
+            this.lblRadarStatus.AutoSize = true;
+            this.lblRadarStatus.Location = new System.Drawing.Point(381, 468);
+            this.lblRadarStatus.Name = "lblRadarStatus";
+            this.lblRadarStatus.Size = new System.Drawing.Size(0, 17);
+            this.lblRadarStatus.TabIndex = 10;
+            this.lblRadarStatus.Click += new System.EventHandler(this.label3_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1084, 512);
+            this.ClientSize = new System.Drawing.Size(616, 559);
+            this.Controls.Add(this.lblRadarStatus);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnActivateRadar);
-            pictureBox1.MouseWheel += pictureBox1_MouseWheel;
             this.Controls.Add(this.lblGravitation);
-            this.Controls.Add(this.tbGravitation);
             this.Controls.Add(this.lblSpreading);
             this.Controls.Add(this.trackBar1);
             this.Controls.Add(this.lblDirection);
@@ -138,11 +158,9 @@
             this.Controls.Add(this.pictureBox1);
             this.Name = "Form1";
             this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbDirection)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tbGravitation)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -156,9 +174,11 @@
         private System.Windows.Forms.Label lblDirection;
         private System.Windows.Forms.TrackBar trackBar1;
         private System.Windows.Forms.Label lblSpreading;
-        private System.Windows.Forms.TrackBar tbGravitation;
         private System.Windows.Forms.Label lblGravitation;
         private System.Windows.Forms.Button btnActivateRadar;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblRadarStatus;
     }
 }
 

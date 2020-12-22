@@ -12,18 +12,18 @@ namespace CourseworkOfTheThirdSemester
     {
         public bool ActiveRadar = false; //находится ли частица под действием радара
 
-        // два новых поля под цвет начальный и конечный
+        //  поля под цвет начальный и конечный
         public Color FromColor;
         public Color ToColor;
 
         public int Radius; // радуис частицы
         public float X; // X координата положения частицы в пространстве
-        public float Y;
+        public float Y;// Y координата положения частицы в пространстве
 
         public float Life; // запас здоровья частицы
 
         public float SpeedX; // скорость перемещения по оси X
-        public float SpeedY;
+        public float SpeedY;// скорость перемещения по оси Y
 
         public static Random rand = new Random();
 
@@ -37,13 +37,12 @@ namespace CourseworkOfTheThirdSemester
             SpeedX = (float)(Math.Cos(direction / 180 * Math.PI) * speed);
             SpeedY = -(float)(Math.Sin(direction / 180 * Math.PI) * speed);
 
-            // а это не трогаем
             Radius = 2 + rand.Next(10);
             Life = 20 + rand.Next(100);
         }
         public virtual void Draw(Graphics g)
         {
-            // рассчитываем коэффициент прозрачности по шкале от 0 до 1.0
+            // коэффициент прозрачности по шкале от 0 до 1.0
             float k = Math.Min(1f, Life / 100);
             // рассчитываем значение альфа канала в шкале от 0 до 255
             // по аналогии с RGB, он используется для задания прозрачности
@@ -64,8 +63,6 @@ namespace CourseworkOfTheThirdSemester
 
         public class ParticleColorful : Particle
         {
-
-
             public static Color MixColor(Color color1, Color color2, float k)
             {
 
@@ -75,7 +72,7 @@ namespace CourseworkOfTheThirdSemester
             blue = (int)(color2.B * k + color1.B * (1 - k));
 
 
-                alpha = (alpha < 0) ? 0 : (alpha > 255) ? 255 : alpha;
+                alpha = (alpha < 0) ? 0 : (alpha > 255) ? 255 : alpha;// ограничения допустимого диапозона
                 red = (red < 0) ? 0 : (red > 255) ? 255 : red;
                 green = (green < 0) ? 0 : (green > 255) ? 255 : green;
                 blue = (blue < 0) ? 0 : (blue > 255) ? 255 : blue;
@@ -83,13 +80,12 @@ namespace CourseworkOfTheThirdSemester
                 return Color.FromArgb(alpha, red, green, blue);
 
             }
-
             // ну и отрисовку перепишем
             public override void Draw(Graphics g)
             {
                 float k = Math.Min(1f, Life / 100);
 
-                // так как k уменьшается от 1 до 0, то порядок цветов обратный
+                //  k уменьшается от 1 до 0, то порядок цветов обратный
                 var color = MixColor(ToColor, FromColor, k);
                 var b = new SolidBrush(color);
 
@@ -100,16 +96,6 @@ namespace CourseworkOfTheThirdSemester
 
         }
 
-        public class ParticleInformation : ParticleColorful
-        {
-            public override void DrawRadar(Graphics g)
-            {
-                float k = Math.Min(1f, Life / 100);
-                var color = MixColor(ToColor, FromColor, k);
-                var b = new SolidBrush(color);
-                g.FillEllipse(b, X - Radius, Y - Radius, Radius * 2, Radius * 2);
-            }
-        }
 
     }
 }
